@@ -51,7 +51,7 @@ navigator.mediaDevices
                     msg: chatInputBox.value,
                     user: currentUserId,
                 });
-                chatInputBox.value = "";
+                chatInputBox.value = ""; 
             }
         });
         document.getElementById("sendMsg").addEventListener("click", (e) => {
