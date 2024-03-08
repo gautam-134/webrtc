@@ -71,6 +71,7 @@ navigator.mediaDevices
             all_messages.append(li);
             main__chat__window.scrollTop = main__chat__window.scrollHeight;
         });
+
     });
 
 peer.on("call", function (call) {
@@ -95,8 +96,8 @@ peer.on("open", (id) => {
 });
 
 
-socket.on("disconnect", function() {
-   socket.emit("leave-room", ROOM_ID, currentUserId)
+socket.on("disconnect", function () {
+    socket.emit("leave-room", ROOM_ID, currentUserId)
 });
 
 const connectToNewUser = (userId, streams) => {
@@ -108,10 +109,10 @@ const connectToNewUser = (userId, streams) => {
         addVideoStream(video, userVideoStream);
     });
 
-    call.on("close", () =>{
+    call.on("close", () => {
         video.remove();
     });
-    peers[userId]= call;
+    peers[userId] = call;
 };
 
 const addVideoStream = (videoEl, stream, uId = "") => {
